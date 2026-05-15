@@ -1,0 +1,43 @@
+@import "tailwindcss";
+
+@theme {
+  --font-sans: "Inter", ui-sans-serif, system-ui, sans-serif;
+  --font-display: "Anton", "Inter", sans-serif;
+  --color-mwanga-gold: #D4AF37;
+  --color-mwanga-black: #0A0A0A;
+}
+
+@layer base {
+  body {
+    @apply bg-[var(--color-mwanga-black)] text-white font-sans antialiased;
+  }
+  
+  h1, h2, h3 {
+    @apply font-display tracking-tight;
+  }
+}
+
+.glass-card {
+  @apply bg-white/5 backdrop-blur-lg border border-white/10;
+}
+
+.hover-gold {
+  @apply transition-colors duration-300 hover:text-[var(--color-mwanga-gold)];
+}
+
+.music-grid {
+  display: grid;
+  grid-template-columns: repeat(auto-fill, minmax(280px, 1fr));
+  gap: 2rem;
+}
+
+@keyframes float {
+  0% { transform: translateY(0px); }
+  50% { transform: translateY(-10px); }
+  100% { transform: translateY(0px); }
+}
+
+.animate-float {
+  animation: float 6s ease-in-out infinite;
+}
+
